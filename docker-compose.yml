@@ -33,7 +33,7 @@ services:
       - VIRTUAL_PORT=1313
 
   sync:
-    image: gici/git-sync
+    build: sync/
     restart: always
     volumes:
       - ${VOLUMES}/hugo:/git
