@@ -24,3 +24,8 @@ git clone --recursive https://github.com/mknentwich/compose.git
 cp -R example .
 docker-compose up
 ----
+
+== Configuration
+
+Most important configuration can be done on the `.env` file.
+Examples are enable/disable https, change the domain, set the hugo repository, etc... .
