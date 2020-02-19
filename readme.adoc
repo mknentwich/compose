@@ -1,0 +1,26 @@
+= Nentwich Compose Services
+Richard Stöckl <richard.stoeckl@aon.at>
+
+This repository ensures an easy installation method for the Nentwich services.
+
+== Requirements
+
+This software requires a running docker daemon and the `docker-compose` command in your path.
+Currently, podman is not supported due to missing docker apis.
+
+== Setup
+
+Only a few steps are required for a bare installation of all services:
+
+. clone this repository and all its sub repositories
+. copy all examples to the projects root
+. startup
+
+You can use the following commands from the projects root:
+
+[source,shell]
+----
+git clone --recursive https://github.com/mknentwich/compose.git
+cp -R example .
+docker-compose up
+----
