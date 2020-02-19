@@ -22,10 +22,13 @@ You can use the following commands from the projects root:
 ----
 git clone --recursive https://github.com/mknentwich/compose.git
 cp -R example .
-docker-compose up
+docker-compose up --build
 ----
+
+TIP: To not rebuild the core image everytime, leave the `--build` flag.
 
 == Configuration
 
 Most important configuration can be done on the `.env` file.
-Examples are enable/disable https, change the domain, set the hugo repository, etc... .
+Examples are enable/disable https, change the domain, set the hugo repository, etc....
+In order to use this project, the domain names have to be resolved, which can be acquired by using `/etc/hosts`.
