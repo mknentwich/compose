@@ -19,6 +19,8 @@ services:
     image: klakegg/hugo:asciidoctor
     restart: always
     command: server
+    depends_on:
+      - sync
     volumes:
       - ${VOLUMES}/hugo:/src
     expose:
@@ -29,6 +31,18 @@ services:
       - LETSENCRYPT_HOST=www.${DOMAIN}
       - VIRTUAL_HOST=www.${DOMAIN}
       - VIRTUAL_PORT=1313
+
+  sync:
+    image: gici/git-sync
+    restart: always
+    volumes:
+      - ${VOLUMES}/hugo:/git
+    environment:
+      - GIT_SYNC_REPO=${HUGO_REPO}
+      - GIT_SYNC_DEST=/git
+      - GIT_SYNC_BRANCH=${HUGO_BRANCH}
+      - GIT_SYNC_REV=FETCH_HEAD
+      - GIT_SYNC_WAIT=${HUGO_SYNC_WAIT}
 
   nginx-web:
     image: nginx
