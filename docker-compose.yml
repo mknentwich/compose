@@ -16,7 +16,7 @@ services:
       - VIRTUAL_PORT=9400
 
   hugo:
-    image: klakegg/hugo:asciidoctor
+    image: klakegg/hugo:ext-asciidoctor
     restart: always
     command: server
     depends_on:
