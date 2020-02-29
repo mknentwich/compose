@@ -33,6 +33,7 @@ services:
       - LETSENCRYPT_HOST=www.${DOMAIN}
       - VIRTUAL_HOST=www.${DOMAIN}
       - VIRTUAL_PORT=1313
+      - HUGO_PARAMS_CORE=core.${DOMAIN}
 
   sync:
     build: sync/
